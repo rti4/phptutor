@@ -38,7 +38,7 @@ while ($i < 8) {
 
 print '</table>';
 
-print '<br><br>';
+print '<br>';
 
 print '<table>';
 for ($i = 0; $i < 8; $i++) {
