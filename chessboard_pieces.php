@@ -6,8 +6,8 @@ class cb_square {
 	public $cb_uid = NULL;
 	public $style = '';
 	public $text_color = '';
-	public $width = '20px';
-	public $height = '20px';
+	public $width = '60px';
+	public $height = '60px';
 }
 
 
@@ -112,7 +112,7 @@ class chessboard {
 
 
 	public function render_chessboard(){
-		print '<table>';
+		print '<table style="text-align:center">';
 		#render top row of alphabets
 		$this->render_alpha_row();
 		#render chessboard itself
