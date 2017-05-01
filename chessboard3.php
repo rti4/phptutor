@@ -28,10 +28,11 @@ function create_chessboard($i) {
   print "<td>$i</td>";
 }
 
-function create_alpharow ($alpha_array) {
+
+function create_alpharow ($alpha_str, $length) {
   print '<td>' . ' ' . '</td>';
-  for ($i=0; $i < count($alpha_array); $i++) {
-    print '<td>' . $alpha_array[$i] . '</td>';
+    for ($i = 0; $i < $length; $i++) {
+        print '<td>' . substr($alpha_str, $i, 1) . '</td>';
   }
 
 }
@@ -40,11 +41,12 @@ function create_alpharow ($alpha_array) {
 $alpha_array = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H');
 $alpha_str = 'ABCDEFGH';
 $header_str = "Header";
+$length = strlen($alpha_str);
 
 print '<table>';
 # print letter system
 print '<tr>';
-  create_alpharow($alpha_array);
+  create_alpharow($alpha_str, $length);
 print '</tr>';
   for ($i = 0; $i < 8; $i++) {
       print '<tr>';
@@ -53,7 +55,8 @@ print '</tr>';
       print '</tr>';
   }
 print '<tr>';
-  create_alpharow($alpha_array);
+  create_alpharow($alpha_str, $length);
 print '</tr>';
 print '</table>';
+
 ?>
