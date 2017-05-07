@@ -1,5 +1,7 @@
 <?php
 
+include_once('ChessPieceManager.php');
+
 class cb_square {
 	# color can be pink/black
 	public $bgcolor = NULL;
@@ -11,11 +13,11 @@ class cb_square {
 }
 
 
-class chessboard {
+class ChessBoardManager {
 	#const ALPHA_STR = 'ABCDEFGH';
 	private $alpha_str = 'ABCDEFGH';
 	private $cb_array = array(array());
-
+    private $cpm = NULL;
 	/*
 	private function create_alpharow($alpha_str, $length){
 		
@@ -59,6 +61,10 @@ class chessboard {
 	//create chessboard
 	public function __construct(){
 		$temp_data = array();
+
+		#variable used to manage the chess pieces, their location, and status
+        $this->cpm = new ChessPieceManager();
+        print($this->cpm);
 
 		$sq_measurements = new cb_square();
 		
@@ -130,7 +136,7 @@ class chessboard {
 
 
 # driver of program
-$board = new chessboard();
+$board = new ChessBoardManager();
 print_r($board->render_chessboard());
 
 
